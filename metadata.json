@@ -1,0 +1,6 @@
+{
+  "name": "Career Profile",
+  "description": "منصة الهوية المهنية المتكاملة - نحوّل خبرتك وإنجازاتك إلى صورة مهنية تبرز قيمتك وتفتح لك أفضل الفرص الوظيفية",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
