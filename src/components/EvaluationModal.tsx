@@ -152,22 +152,30 @@ export const EvaluationModal = ({
             {/* Service Selection */}
             <div>
               <label className="block text-xs font-bold text-slate-200 mb-1.5">
-                الخدمة أو الباقة المطلوبة:
+                الباقة أو الخدمة المطلوبة:
               </label>
               <select
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl bg-[#0A0C14] border border-slate-800 focus:border-[#A855F7] text-xs text-white focus:outline-none"
               >
-                {SERVICES_DATA.map((srv) => (
-                  <option key={srv.id} value={srv.id}>
-                    {srv.title} ({srv.englishTitle})
-                  </option>
-                ))}
-                <option value="full-bundle">
-                  باقة الهوية المتكاملة (CV + ATS + LinkedIn + Cover Letter)
-                </option>
+                <optgroup label="باقات الـ CV الرئيسية المعتمدة">
+                  <option value="ats-optimization">CV ATS (متوافق مع أنظمة التتبع - 150 جنيه)</option>
+                  <option value="cv-writing">CV STANDARD (بصورة شخصية وتصميم جذاب - 100 جنيه)</option>
+                </optgroup>
+                <optgroup label="خدمات الهوية الرقمية والاستشارات">
+                  <option value="linkedin-optimization">تطوير وتحسين بروفايل LinkedIn</option>
+                  <option value="portfolio-design">تصميم وإعداد Portfolio احترافي</option>
+                  <option value="personal-branding">بناء الهوية المهنية (Personal Branding)</option>
+                  <option value="full-bundle">باقة الهوية المتكاملة (CV + ATS + LinkedIn + Cover Letter)</option>
+                </optgroup>
               </select>
+              
+              {/* Payment note */}
+              <div className="mt-1.5 p-2 rounded-lg bg-emerald-950/30 border border-emerald-900/40 text-[11px] text-emerald-300 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>نظام دفع مريح: يدفع 50% مقدماً و 50% بعد المراجعة والاستلام النهائي</span>
+              </div>
             </div>
 
             {/* Name & WhatsApp Phone */}

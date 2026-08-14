@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { WheelNavigation } from './components/WheelNavigation';
 import { IdentityFlow } from './components/IdentityFlow';
 import { ServicesSection } from './components/ServicesSection';
+import { CvPackagesSection } from './components/CvPackagesSection';
 import { WhyDifferent } from './components/WhyDifferent';
 import { BeforeAfter } from './components/BeforeAfter';
 import { CvDiagnosticTool } from './components/CvDiagnosticTool';
@@ -63,7 +64,12 @@ export default function App() {
           <IdentityFlow onOpenEvaluationModal={() => handleOpenEvaluationModal()} />
         </ScrollReveal>
 
-        {/* 4. Services Section (5 prioritized tiers + Bonus services) */}
+        {/* 4. CV Packages Section (CV ATS 150 EGP vs CV STANDARD 100 EGP + Requirements & Guarantees) */}
+        <ScrollReveal durationMs={900}>
+          <CvPackagesSection onOpenEvaluationModal={handleOpenEvaluationModal} />
+        </ScrollReveal>
+
+        {/* 5. Services Section (5 prioritized tiers + Bonus services) */}
         <ScrollReveal durationMs={900}>
           <ServicesSection onOpenEvaluationModal={handleOpenEvaluationModal} />
         </ScrollReveal>

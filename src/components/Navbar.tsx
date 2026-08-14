@@ -37,6 +37,7 @@ export const Navbar = ({ onOpenEvaluationModal, onOpenDriveHub }: NavbarProps) =
 
   const navLinks = [
     { label: 'عجلة 360°', href: '#wheel-navigator' },
+    { label: 'الباقات والأسعار', href: '#pricing-packages' },
     { label: 'الخدمات', href: '#services' },
     { label: 'رحلة الهوية', href: '#journey' },
     { label: 'ليه إحنا؟', href: '#why-us' },

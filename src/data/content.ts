@@ -6,10 +6,211 @@ export const BRAND_INFO = {
   tagline: 'منصة الهوية المهنية المتكاملة',
   coreMessage: 'نحوّل خبرتك وإنجازاتك إلى صورة مهنية تبرز قيمتك وتفتح لك فرص أفضل',
   subheadline: 'مش مجرد كتابة أو تصميم CV.. إحنا بنبني حضورك المهني المتكامل عبر كل محطات التوظيف: CV • ATS • HR • LinkedIn • Portfolio • Personal Branding',
-  facebookUrl: 'https://www.facebook.com/profile.php?id=61593435082761',
-  whatsappPhone: '+201000000000', // Default clean Egyptian format placeholder or generic link
+  facebookUrl: 'https://facebook.com/careerprofile.cv',
+  whatsappPhone: '+201000000000',
   whatsappUrl: 'https://wa.me/201000000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D9%80%20CV%20%D9%88%D8%A7%D9%84%D9%87%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%8A%D8%A9%20%D9%85%D8%B9%20Career%20Profile',
 };
+
+export interface RequiredItem {
+  icon: string;
+  title: string;
+  description: string;
+  isRequired?: boolean;
+}
+
+export interface CvPackage {
+  id: 'standard' | 'ats';
+  title: string;
+  badge: string;
+  hasPhoto: boolean;
+  price: number;
+  currency: string;
+  paymentTerm: string;
+  paymentTermDetail: string;
+  requiredItems: RequiredItem[];
+  features: string[];
+  recommendedFor: string;
+  colorScheme: {
+    badgeBg: string;
+    badgeText: string;
+    border: string;
+    accentGlow: string;
+  };
+}
+
+export const CV_PACKAGES_DATA: CvPackage[] = [
+  {
+    id: 'standard',
+    title: 'CV STANDARD',
+    badge: 'بصورة شخصية',
+    hasPhoto: true,
+    price: 100,
+    currency: 'جنيه',
+    paymentTerm: 'يدفع نصفهم في الاول وبعد المراجعة والاستلام يدفع الجزء التاني',
+    paymentTermDetail: 'نظام دفع مريح: 50% مقدماً لبدء العمل، و 50% بعد المراجعة الكاملة والاستلام',
+    requiredItems: [
+      {
+        icon: 'Target',
+        title: 'اسم الوظيفة (المسمى الوظيفي)',
+        description: 'المسمى الوظيفي التي ستقدم لها أو إعلان الوظيفة الخاص بها (ضروري)',
+        isRequired: true
+      },
+      {
+        icon: 'User',
+        title: 'بيانات شخصية',
+        description: '(الاسم - المسمى الوظيفي - رقم التليفون - البريد الإلكتروني الجميل) + (الصورة الشخصية ضرورية)',
+        isRequired: true
+      },
+      {
+        icon: 'Briefcase',
+        title: 'الخبرات المهنية (الوظائف السابقة)',
+        description: 'من الأحدث إلى الأقدم، مكتوب جنب كل وظيفة تاريخ بدايتها ونهايتها بالشهور والسنة',
+        isRequired: true
+      },
+      {
+        icon: 'GraduationCap',
+        title: 'التعليم',
+        description: '(الدرجة التعليمية - وتاريخ التخرج)',
+        isRequired: true
+      },
+      {
+        icon: 'Award',
+        title: 'الكورسات أو التدريبات',
+        description: 'الكورسات أو التدريبات إن وُجد'
+      },
+      {
+        icon: 'Monitor',
+        title: 'المهارات',
+        description: '(البرامج ال بتشتغل عليها)'
+      },
+      {
+        icon: 'Globe',
+        title: 'اللغات',
+        description: 'اللغات ومستواك فيهم'
+      },
+      {
+        icon: 'Image',
+        title: 'مشاريع أو كورسات',
+        description: 'أي مشاريع أو كورسات ليها صور لازم تتبعت معاها'
+      }
+    ],
+    features: [
+      'تصميم احترافي وملفت للنظر',
+      'يعكس شخصيتك بشكل أفضل',
+      'مثالي للتقديم المباشر للشركات',
+      'يبرز خبراتك بصورة جذابة وواضحة'
+    ],
+    recommendedFor: 'التقديم المباشر للشركات المحلية، المقابلات الشخصية، والوظائف التي تتطلب إبراز الهوية البصرية والشخصية',
+    colorScheme: {
+      badgeBg: 'bg-indigo-950/70',
+      badgeText: 'text-indigo-300',
+      border: 'border-indigo-500/40 hover:border-indigo-400',
+      accentGlow: 'from-indigo-600/20 to-purple-600/10'
+    }
+  },
+  {
+    id: 'ats',
+    title: 'CV ATS',
+    badge: 'بدون صورة شخصية',
+    hasPhoto: false,
+    price: 150,
+    currency: 'جنيه',
+    paymentTerm: 'يدفع نصفهم في الاول وبعد المراجعة والاستلام يدفع الجزء التاني',
+    paymentTermDetail: 'نظام دفع مريح: 50% مقدماً لبدء العمل، و 50% بعد المراجعة الكاملة والاستلام',
+    requiredItems: [
+      {
+        icon: 'Target',
+        title: 'اسم الوظيفة (المسمى الوظيفي)',
+        description: 'المسمى الوظيفي التي ستقدم لها أو إعلان الوظيفة الخاص بها (ضروري)',
+        isRequired: true
+      },
+      {
+        icon: 'User',
+        title: 'بيانات شخصية',
+        description: '(الاسم - المسمى الوظيفي - رقم التليفون - البريد الإلكتروني الجميل) بدون صورة شخصية',
+        isRequired: true
+      },
+      {
+        icon: 'Briefcase',
+        title: 'الخبرات المهنية (الوظائف السابقة)',
+        description: 'من الأحدث إلى الأقدم، مكتوب جنب كل وظيفة تاريخ بدايتها ونهايتها بالشهور والسنة',
+        isRequired: true
+      },
+      {
+        icon: 'GraduationCap',
+        title: 'التعليم',
+        description: '(الدرجة التعليمية - وتاريخ التخرج)',
+        isRequired: true
+      },
+      {
+        icon: 'Award',
+        title: 'الكورسات أو التدريبات',
+        description: 'الكورسات أو التدريبات إن وُجد'
+      },
+      {
+        icon: 'Monitor',
+        title: 'المهارات',
+        description: '(البرامج ال بتشتغل عليها)'
+      },
+      {
+        icon: 'Globe',
+        title: 'اللغات',
+        description: 'اللغات ومستواك فيهم'
+      },
+      {
+        icon: 'Image',
+        title: 'مشاريع أو كورسات',
+        description: 'أي مشاريع أو كورسات ليها صور لازم تتبعت معاها'
+      }
+    ],
+    features: [
+      'متوافق مع أنظمة ATS لاجتياز الفرز الأولية',
+      'تنسيق احترافي وبسيط',
+      'يزيد فرص ظهورك لـ recruiters',
+      'كلمات مفتاحية محسنة لزيادة فرص القبول'
+    ],
+    recommendedFor: 'الشركات متعددة الجنسيات (Multinationals)، بوابات التوظيف الإلكترونية، شركات الخليج والوظائف الدولية',
+    colorScheme: {
+      badgeBg: 'bg-purple-950/70',
+      badgeText: 'text-purple-300',
+      border: 'border-[#A855F7]/50 hover:border-[#C084FC]',
+      accentGlow: 'from-purple-600/30 to-indigo-600/20'
+    }
+  }
+];
+
+export const WORK_GUARANTEES_DATA = [
+  {
+    icon: 'Languages',
+    title: 'لغة الـ CV',
+    badge: 'اختر اللغة المناسبة لك',
+    detail: 'عربي أو إنجليزي'
+  },
+  {
+    icon: 'FileCheck',
+    title: 'تسليم الملفات',
+    badge: 'صيغ مفتوحة وجاهزة',
+    detail: 'PDF + Word'
+  },
+  {
+    icon: 'ShieldCheck',
+    title: 'الخصوصية',
+    badge: 'أمان وسرية مطلقة',
+    detail: 'بياناتك آمنة 100%'
+  },
+  {
+    icon: 'RefreshCw',
+    title: 'عدد المراجعات',
+    badge: 'تعديل حتى الرضا',
+    detail: 'مراجعتين مجاناً'
+  },
+  {
+    icon: 'Clock',
+    title: 'وقت التسليم',
+    badge: 'إنجاز سريع ومحدد',
+    detail: 'من 1 - 3 أيام عمل'
+  }
+];
 
 export const SERVICES_DATA: ServiceItem[] = [
   {

@@ -155,13 +155,25 @@ export const Hero = ({ onOpenEvaluationModal }: HeroProps) => {
                 <div className="text-xs text-slate-400 font-medium mt-0.5">مهيأ تقنياً للـ ATS</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-white">STAR</div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">صياغة مبنية على الأثر</div>
+                <div className="text-xl sm:text-2xl font-extrabold text-[#C084FC]">100 / 150 ج.م</div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">باقات STANDARD و ATS</div>
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-extrabold text-white">PDF + DOCX</div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">نسختين قابلة للتعديل</div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">تسليم نسختين ومراجعات</div>
               </div>
+            </div>
+
+            {/* Quick Packages Callout link */}
+            <div className="pt-3">
+              <a
+                href="#pricing-packages"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 hover:text-white bg-purple-950/40 hover:bg-purple-900/50 px-3.5 py-1.5 rounded-full border border-purple-800/50 transition-colors"
+              >
+                <span>💡 اطلع على تفاصيل باقات السير الذاتية وشروط الدفع الميسر</span>
+                <span className="text-[10px] bg-purple-800/80 px-2 py-0.5 rounded-full text-purple-200">50% بعد الاستلام</span>
+                <ArrowLeft className="w-3 h-3" />
+              </a>
             </div>
 
           </div>
