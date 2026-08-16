@@ -36,6 +36,7 @@ export const Navbar = ({ onOpenEvaluationModal, onOpenDriveHub }: NavbarProps) =
   }, []);
 
   const navLinks = [
+    { label: 'فضاء 3D', href: '#sphere-3d-gallery' },
     { label: 'عجلة 360°', href: '#wheel-navigator' },
     { label: 'الباقات والأسعار', href: '#pricing-packages' },
     { label: 'الخدمات', href: '#services' },

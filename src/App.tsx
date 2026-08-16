@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { SphereMotionSection } from './components/SphereMotionSection';
 import { WheelNavigation } from './components/WheelNavigation';
 import { IdentityFlow } from './components/IdentityFlow';
 import { ServicesSection } from './components/ServicesSection';
@@ -54,7 +55,10 @@ export default function App() {
         {/* 1. Hero Section */}
         <Hero onOpenEvaluationModal={() => handleOpenEvaluationModal('cv-writing')} />
 
-        {/* 2. 360 Degree Wheel Navigation (CCM-11 Interactive Experience) */}
+        {/* 2. 3D Fibonacci Sphere & Constellation Motion Section */}
+        <SphereMotionSection onOpenEvaluationModal={handleOpenEvaluationModal} />
+
+        {/* 3. 360 Degree Wheel Navigation (CCM-11 Interactive Experience) */}
         <ScrollReveal durationMs={900}>
           <WheelNavigation onOpenEvaluationModal={handleOpenEvaluationModal} />
         </ScrollReveal>
