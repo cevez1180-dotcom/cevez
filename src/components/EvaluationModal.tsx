@@ -68,7 +68,7 @@ export const EvaluationModal = ({
     message += '\nجاهز لإرسال نسختي الحالية للبدء والتنسيق معكم.';
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/201000000000?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/201095751720?text=${encoded}`, '_blank');
     setSubmittedSuccess(true);
     setTimeout(() => {
       onClose();
